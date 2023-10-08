@@ -394,36 +394,34 @@ header {
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px; /* Add some spacing between each div */
+    grid-template-columns: repeat(3, 1fr); /* 3 images in a row */
+    gap: 20px; /* Adjust the gap between images */
 }
 
 .portfolio__item {
-    background: none; /* Remove background color */
     overflow: hidden;
-    border: 1px solid var(--clr-accent); /* Add border */
-    border-radius: 10px; /* Add rounded corners */
-    padding: 10px; /* Add padding inside each div */
-    text-align: center; /* Center the content */
-    transition: transform 750ms cubic-bezier(.5, 0, .5, 1), opacity 250ms linear;
+    position: relative; /* Add position relative to the portfolio item */
 }
 
 .portfolio__img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.25s ease;
+  }
+  
+  
+
+.portfolio__item:hover .portfolio__img {
+    transform: scale(1.1); /* Adjust the scale factor for the hovering effect */
+    opacity: 0.7; /* Adjust the opacity for the hovering effect */
 }
 
-.portfolio__item:focus {
-    position: relative;
-    z-index: 2;
+/* Add this style for a nice border effect on hover */
+.portfolio__item:hover {
+    border: 2px solid var(--clr-light);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Add a subtle shadow */
 }
-
-.portfolio__img:hover,
-.portfolio__item:focus .portfolio__img {
-    transform: scale(1.05); /* Slightly scale up on hover */
-    opacity: .8; /* Reduce opacity on hover */
-}
-
 
 
 /* footer */
