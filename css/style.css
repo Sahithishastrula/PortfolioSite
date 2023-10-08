@@ -386,31 +386,31 @@ header {
 }
 
 /* My Work */
-
 .my-work {
     background-color: var(--clr-dark);
     color: var(--clr-light);
-    text-align: center;    
+    text-align: center;
 }
 
 .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Add some spacing between each div */
 }
 
 .portfolio__item {
-    background: var(--clr-accent);
+    background: none; /* Remove background color */
     overflow: hidden;
-    
-    background-size: contain;
+    border: 1px solid var(--clr-accent); /* Add border */
+    border-radius: 10px; /* Add rounded corners */
+    padding: 10px; /* Add padding inside each div */
+    text-align: center; /* Center the content */
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1), opacity 250ms linear;
 }
 
 .portfolio__img {
-    margin: 0.35em;
-    transition: 
-        transform 750ms cubic-bezier(.5, 0, .5, 1),
-        opacity 250ms linear;
-
+    max-width: 100%;
+    height: auto;
 }
 
 .portfolio__item:focus {
@@ -420,9 +420,10 @@ header {
 
 .portfolio__img:hover,
 .portfolio__item:focus .portfolio__img {
-    transform: scale(1.2);
-    opacity: .5;
+    transform: scale(1.05); /* Slightly scale up on hover */
+    opacity: .8; /* Reduce opacity on hover */
 }
+
 
 
 /* footer */
